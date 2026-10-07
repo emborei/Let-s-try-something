@@ -1,0 +1,27 @@
+{
+  "name": "KneipenCheck – Hygiene einfach dokumentieren",
+  "short_name": "KneipenCheck",
+  "description": "Temperatur-, Reinigungs- und Wareneingangs-Kontrollen in Sekunden dokumentieren. Offline-fähig, mit Zeitstempel und PDF-Bericht für die Lebensmittelkontrolle.",
+  "lang": "de-DE",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "id": "kneipencheck",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "any",
+  "background_color": "#f4f4f1",
+  "theme_color": "#ffc53d",
+  "categories": ["business", "productivity", "food"],
+  "icons": [
+    { "src": "./icons/icon-96.png", "sizes": "96x96", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Temperaturen messen", "short_name": "Temperaturen", "url": "./index.html#/temperaturen" },
+    { "name": "Putzen abhaken", "short_name": "Putzen", "url": "./index.html#/putzen" },
+    { "name": "Bericht für Kontrolle", "short_name": "Bericht", "url": "./index.html#/bericht" }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "kneipencheck",
+  "version": "2.0.0-prototype",
+  "private": true,
+  "type": "module",
+  "description": "KneipenCheck – die einfachste Hygienedokumentation für Eckkneipen, Imbisse, Cafés und kleine Restaurants. Offline-fähige PWA mit Server-Zeitstempel, Hash-Kette und Ein-Klick-PDF für die Lebensmittelkontrolle.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server/index.mjs",
+    "serve": "node server/index.mjs",
+    "test": "node tests/run.mjs",
+    "test:ui": "node tests/ui-dom.mjs",
+    "test:all": "node tests/run.mjs && node tests/ui-dom.mjs",
+    "check": "node --check app/js/app.js && node tests/run.mjs"
+  },
+  "keywords": [
+    "haccp",
+    "hygiene",
+    "gastronomie",
+    "pwa",
+    "offline",
+    "dokumentation",
+    "lebensmittelkontrolle"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emborei/Let-s-try-something.git"
+  },
+  "devDependencies": {
+    "jsdom": "^30.0.0"
+  },
+  "files": [
+    "app",
+    "server",
+    "tests",
+    "docs",
+    "README.md"
+  ]
+}
