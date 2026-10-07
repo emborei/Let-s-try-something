@@ -3,7 +3,7 @@
    Eine Liste, dicke Kacheln, Ampelfarben. Fertig.
    ========================================================================== */
 
-import { h, fmtTemp, fmtTime, fmtDateLong, dayKey, MS_DAY, esc } from '../../core/util.js';
+import { h, fmtTemp, fmtTime, fmtDateLong, dayKey, parseDayKey, MS_DAY, esc } from '../../core/util.js';
 import { card, pill, emptyState, icon, toast, sheet, confirmDialog, progressBar } from '../components.js';
 import { state, logic, st, setCurrentUser } from '../store.js';
 import { openEntrySheet, openSwitchUser, openEntryDetail } from './entry.js';
@@ -209,7 +209,7 @@ export function taskTile(item, ctxRoute) {
 export function nachtragenSheet(key, misses) {
   const body = h('div', {});
   body.append(h('div', { class: 'warnbox' },
-    `Diese Kontrollen fehlen für den ${fmtDateLong(new Date(key).getTime())}. Ein Nachtrag wird als Nachtrag gekennzeichnet – nicht als regulärer Eintrag. `,
+    `Diese Kontrollen fehlen für den ${fmtDateLong(parseDayKey(key).getTime())}. Ein Nachtrag wird als Nachtrag gekennzeichnet – nicht als regulärer Eintrag. `,
     h('br'), h('b', {}, 'Bitte nur eintragen, wenn du es wirklich gemacht hast.')));
   const list = h('div', {});
   for (const m of misses) {
@@ -225,7 +225,7 @@ export function nachtragenSheet(key, misses) {
       h('span', { class: 'pill', dataset: { tone: 'red' } }, 'fehlt')));
   }
   body.append(list);
-  return sheet({ title: 'Gestern nachtragen', subtitle: fmtDateLong(new Date(key).getTime()), content: body });
+  return sheet({ title: 'Gestern nachtragen', subtitle: fmtDateLong(parseDayKey(key).getTime()), content: body });
 }
 
 /* ---------- Personenzeile (Kopfzeile) ----------------------------------- */

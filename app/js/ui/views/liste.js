@@ -3,7 +3,7 @@
    Gleiche Kacheln wie auf der Startseite, plus Verlauf der letzten Tage.
    ========================================================================== */
 
-import { h, fmtTemp, fmtTime, fmtDate, relativeDay, dayKey, MS_DAY, slug, num } from '../../core/util.js';
+import { h, fmtTemp, fmtTime, fmtDate, relativeDay, dayKey, parseDayKey, MS_DAY, num } from '../../core/util.js';
 import { card, pill, emptyState, toast, sheet, confirmDialog, sectionTitle, icon } from '../components.js';
 import { state, logic, st, addTask, updateTask } from '../store.js';
 import { openEntrySheet, openEntryDetail } from './entry.js';
@@ -64,7 +64,7 @@ export function renderListe(root, { route, navigate }) {
     any = true;
     const row = h('div', { class: 'card card--flat', style: 'padding:10px;margin-bottom:8px' });
     row.append(h('div', { style: 'display:flex;justify-content:space-between;gap:8px;align-items:center' },
-      h('b', {}, relativeDay(new Date(k).getTime(), now).replace(/^./, (c) => c.toUpperCase())),
+      h('b', {}, relativeDay(parseDayKey(k).getTime(), now).replace(/^./, (c) => c.toUpperCase())),
       h('span', { class: 'card__meta' }, `${list.length} Einträge`)));
     for (const e of list.slice(0, 6)) {
       row.append(h('button', {
@@ -94,7 +94,7 @@ export function renderListe(root, { route, navigate }) {
     const box = h('div', { class: 'card', dataset: { state: 'offen' } });
     for (const g of gaps) {
       box.append(h('div', { class: 'row row--split', style: 'margin-bottom:6px' },
-        h('span', { class: 'row__main truncate' }, `${fmtDate(new Date(g.key).getTime())} · ${g.missing.map((m) => m.title).join(', ')}`),
+        h('span', { class: 'row__main truncate' }, `${fmtDate(parseDayKey(g.key).getTime())} · ${g.missing.map((m) => m.title).join(', ')}`),
         h('span', { class: 'pill', dataset: { tone: 'red' } }, `${g.missing.length} fehlt`)));
     }
     root.append(box);
