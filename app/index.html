@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de" data-fontsize="m">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>KneipenCheck – Hygiene-Nachweis für die Gastronomie</title>
+  <meta name="description" content="KneipenCheck ist die einfachste Art, Temperatur-, Reinigungs- und Wareneingangs-Kontrollen zu dokumentieren. Offline-fähig, mit Zeitstempel und PDF-Bericht für die Lebensmittelkontrolle.">
+  <meta name="theme-color" content="#FFC53D">
+  <meta name="color-scheme" content="light dark">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/favicon-32.png" sizes="32x32">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="KneipenCheck">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar" id="topbar">
+      <div class="topbar__brand">
+        <img class="topbar__logo" src="./icons/icon.svg" alt="" width="34" height="34">
+        <div style="min-width:0">
+          <div class="topbar__title" id="tb-title">KneipenCheck</div>
+          <div class="topbar__sub" id="tb-sub">wird geladen …</div>
+        </div>
+      </div>
+      <div class="topbar__spacer"></div>
+      <div class="sync-dot" id="sync-dot" data-state="ok" title="Speicher- und Serverstatus">…</div>
+      <button class="btn btn--sm btn--ghost" id="btn-user" type="button" aria-haspopup="dialog">Anmelden</button>
+    </header>
+
+    <main id="view" aria-live="polite">
+      <div class="empty">KneipenCheck wird geladen …</div>
+    </main>
+  </div>
+
+  <nav class="nav" id="nav" aria-label="Hauptbereiche"></nav>
+  <div class="toast-wrap" id="toasts" aria-live="assertive"></div>
+
+  <noscript>
+    <p style="padding:20px;font-size:20px">Diese App braucht JavaScript. Bitte im Browser JavaScript einschalten.</p>
+  </noscript>
+
+  <script src="./js/app.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Abhängigkeiten (nur für Tests nötig)
+node_modules/
+
+# Server-Daten: bleiben im Betrieb, gehören nicht ins Repository
+server/data/
+*.jsonl.tmp
+
+# Betriebssystem & Editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Protokolle und Sicherungen
+*.log
+KneipenCheck-Sicherung-*.json
