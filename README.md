@@ -26,6 +26,19 @@ Heute:  3 von 11 Kontrollen erledigt
 7. [Tests](#tests)
 8. [Nächste Schritte: Backend, Play Store, Preise](#nächste-schritte)
 9. [Dokumentation im Detail](#dokumentation-im-detail)
+10. [Formularpaket: Gewerbe anmelden in Berlin](gewerbe-berlin/README.md)
+
+---
+
+## Formularpaket: Gewerbe & Verkostung in Berlin
+
+Neben der App liegt ein eigenständiges Paket mit **17 ausfüllbaren PDF-Formularen** für Selbständige,
+die in Berlin Verkostungs- und Verkaufsaufträge ausführen: Gewerbeanmeldung (GewA 1, leer und
+vorausgefüllt), Meldung als Lebensmittelunternehmer, IfSG-Belehrung, Hygienekonzept, Tages- und
+Verkostungsprotokolle, Abweichungsprotokoll, Gaststättenrecht (Gestattung § 12 / Erlaubnis § 2 GastG),
+Sondernutzung, Verkostungsvertrag, Rechnung und Datenschutz-Unterlagen.
+
+→ [`gewerbe-berlin/README.md`](gewerbe-berlin/README.md) · PDFs in `gewerbe-berlin/formulare/`
 
 ---
 
