@@ -54,6 +54,33 @@ formulare/
 
 ---
 
+## Testserver (Vorschau im Browser)
+
+Das Paket lässt sich mit einem kleinen Server ohne Abhängigkeiten im Browser ansehen:
+Übersichtsseite mit allen PDFs (öffnen / herunterladen, Filterfeld), die KneipenCheck-PWA
+unter `/app/` und die Sync-API unter `/api/`.
+
+```bash
+node gewerbe-berlin/testserver.mjs        # http://localhost:8080
+# optional, für die Sync-API der PWA:
+HOST=127.0.0.1 PORT=4173 DATA_DIR=/tmp/kneipencheck-data node server/index.mjs
+```
+
+| Route | Inhalt |
+|---|---|
+| `/` | Übersicht mit allen 17 Formblättern und der App |
+| `/formulare/<datei>.pdf` | PDF inline im Browser (Range-Support, `?download` erzwingt Download) |
+| `/app/` | KneipenCheck-PWA |
+| `/api/health` | Status als JSON |
+| `/api/formulare` | Liste der PDFs als JSON |
+| `/api/time`, `/api/sync`, … | Proxy auf den internen KneipenCheck-Server (`UPSTREAM`, Standard `http://127.0.0.1:4173`) |
+
+Der Server bindet an `0.0.0.0` (Port über `PORT` änderbar). TLS macht der HTTPS-Proxy der
+Plattform: die öffentliche Adresse ist `https://<port>-<sandbox>.e2b.app`, der Node-Prozess
+selbst spricht HTTP hinter diesem Proxy.
+
+---
+
 ## In welcher Reihenfolge arbeiten?
 
 1. **Trainingsphase, 6–8 Wochen vorher:** 01 Checkliste öffnen, 00 Leitfaden lesen, Tätigkeit einordnen.

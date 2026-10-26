@@ -10,6 +10,7 @@
   },
   "scripts": {
     "start": "node server/index.mjs",
+    "serve:formulare": "node gewerbe-berlin/testserver.mjs",
     "serve": "node server/index.mjs",
     "test": "node tests/run.mjs",
     "test:ui": "node tests/ui-dom.mjs",
