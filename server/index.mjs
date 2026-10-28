@@ -56,6 +56,8 @@ function json(res, code, obj, extra = {}) {
     'content-type': 'application/json; charset=utf-8',
     'cache-control': 'no-store',
     'content-length': Buffer.byteLength(body),
+    // Die App darf auch von einem anderen Origin (Vorschau-Port, lokale Datei) syncen
+    'access-control-allow-origin': '*',
     ...extra,
   });
   res.end(body);
